@@ -1,0 +1,24 @@
+{
+  "name": "headset_control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "dependencies": {
+    "@neurosity/notion": "^5.10.0",
+    "bl": "^5.0.0",
+    "cli-spinners": "^2.6.1",
+    "clone": "^2.1.2",
+    "dotenv": "^8.6.0",
+    "onetime": "^6.0.0",
+    "ora": "^5.4.1",
+    "pkg": "^5.5.2",
+    "restore-cursor": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "JL",
+  "license": "TechIsen"
+}
