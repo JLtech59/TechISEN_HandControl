@@ -16,8 +16,7 @@ WebSocketClient webSocketClient;
 WiFiClient client;
 
 void setup() {
-  servo.setPeriodHertz(50);
-  servo.attach(ServoPin, 1000, 2000);
+  
   Serial.begin(115200);
   delay(10);
 
@@ -84,14 +83,14 @@ void loop() {
     }
      if(data=="open"){
       //servo open
-      Open(15);
-      //servo.detach(ServoPin);
+      Open(5);
+      //servo.detach();
       Serial.print("opening claw");
      }
      if(data=="close"){
       //servo close
-      Close(15);
-      //servo.detach(ServoPin);
+      Close(10);
+      //servo.detach();
       Serial.print("closing claw");
      }
     
@@ -108,16 +107,20 @@ void loop() {
 }
 
 void Open(int spd){
-  for (int pos = 0; pos < 79; pos += 1) { 
+  servo.attach(ServoPin);
+  for (int pos = 85; pos > 15; pos -= 1) { 
     servo.write(pos);              
     delay(spd);                       
   }
+  servo.detach();
   
 }
 void Close(int spd){
-  for (int pos = 79; pos > 0; pos -= 1) { 
+  servo.attach(ServoPin);
+  for (int pos = 15; pos < 85; pos += 1) { 
     servo.write(pos);              
     delay(spd);                       
   }
+  servo.detach();
   
 }
